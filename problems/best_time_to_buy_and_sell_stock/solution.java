@@ -1,17 +1,17 @@
 class Solution {
     public int maxProfit(int[] prices) {
 
-        int minprice = prices[0];
-        int maxprofit = 0;
+        int minPrice = prices[0];
+        int maxProfit = 0;
 
-        for(int i = 1; i < prices.length; i++){
-            if(prices[i] < minprice){
-                minprice = prices[i];
-            }
-            else if(maxprofit < prices[i] - minprice){
-                maxprofit = prices[i] - minprice;
-            }
+        for (int i = 1; i < prices.length; i++) {
+            // is today cheaper than anything I've seen? if so, that's my new buy price
+            if(prices[i] < minPrice) minPrice = prices[i];
+            // otherwise, what if I sold today? is that better than my best profit?
+            else if(prices[i] - minPrice > maxProfit) maxProfit = prices[i] - minPrice;
         }
-        return maxprofit;
+
+        return maxProfit;
+        
     }
 }
