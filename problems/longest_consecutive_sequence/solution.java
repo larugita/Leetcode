@@ -10,23 +10,21 @@ class Solution {
         }
 
         for(int num : set){
-
             if(set.contains(num - 1)){
                 continue;
             }
 
             int count = 1;
 
-            while(set.contains(num + 1)){
-                num++;
+            while(set.contains(num+1)){
                 count++;
+                num++;
             }
 
-            if(count > result){
-                result = count;
-            }
+            if(result < count) result = count;
         }
 
         return result;
+        
     }
 }
