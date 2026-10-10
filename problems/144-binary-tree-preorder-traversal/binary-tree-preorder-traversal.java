@@ -18,16 +18,16 @@ class Solution {
         List<Integer> result = new ArrayList<>();
 
         dfs(root, result);
-        
+
         return result;
+        
     }
-    public void dfs(TreeNode node, List<Integer> result) {
+    public void dfs (TreeNode node, List<Integer> res){
         if(node == null){
             return;
         }
-        result.add(node.val);
-
-        dfs(node.left, result);
-        dfs(node.right, result);
+        res.add(node.val);
+        dfs(node.left, res);
+        dfs(node.right, res);
     }
 }
